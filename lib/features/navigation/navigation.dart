@@ -25,10 +25,11 @@ class _NavigationState extends State<Navigation> {
     const HomeScreenView(),
     GraphScreen(),
     const Center(
-      child: Text("Center"),
+      child: Text("Sonraki Aşamalarda İlerlenilecek!\n\t(Özellikler Sekmesi)"),
     ),
     const Center(
-      child: Text("Center"),
+      child:
+          Text("Sonraki Aşamalarda İlerlenilecek!\n\t(Cihaz Kaldırma Sekmesi)"),
     ),
   ];
   @override

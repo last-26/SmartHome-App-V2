@@ -1,8 +1,8 @@
 {
   "sensor_data": {
-    "temperature": 69,
-    "sound": 90.0,
-    "brightness": 94.0,
-    "user_count": 11
+    "temperature": 24,
+    "sound": 60,
+    "brightness": 70,
+    "user_count": 5
   }
 }

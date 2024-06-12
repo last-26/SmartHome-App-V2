@@ -10,7 +10,7 @@ class TemperatureController {
   List<TemperatureData> get temperatureData => _temperatureData;
 
   void startGeneratingData() {
-    _timer = Timer.periodic(Duration(seconds: 5), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
       final newTemperature = TemperatureData(
         DateTime.now(),
         15 + _random.nextDouble() * 10, // 15-25 derece arası rastgele sıcaklık

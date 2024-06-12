@@ -43,10 +43,10 @@ Widget electricitycard(BuildContext context) {
             Text(
               "63.2 kWh",
               style:
-              GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold),
+                  GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Electricity usage this month",
+              "Elektrik Kullanımı",
               style: GoogleFonts.roboto(
                 fontSize: 12,
                 color: Colors.grey.shade400,

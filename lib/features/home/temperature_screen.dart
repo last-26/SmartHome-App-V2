@@ -33,7 +33,8 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
           return Column(
             children: [
               if (_temperatureController.temperatureData.isNotEmpty) ...[
-                if (_temperatureController.temperatureData.last.temperature < 16)
+                if (_temperatureController.temperatureData.first.temperature <
+                    16)
                   Container(
                     color: Colors.blue,
                     padding: EdgeInsets.all(16),
@@ -42,7 +43,8 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
-                if (_temperatureController.temperatureData.last.temperature > 24)
+                if (_temperatureController.temperatureData.first.temperature >
+                    24)
                   Container(
                     color: Colors.red,
                     padding: EdgeInsets.all(16),
@@ -54,6 +56,7 @@ class _TemperatureScreenState extends State<TemperatureScreen> {
               ],
               Expanded(
                 child: ListView.builder(
+                  reverse: true, // ListView ters çevrildi, son veri en üstte
                   itemCount: _temperatureController.temperatureData.length,
                   itemBuilder: (context, index) {
                     final data = _temperatureController.temperatureData[index];

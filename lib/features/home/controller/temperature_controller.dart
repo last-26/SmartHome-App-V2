@@ -11,11 +11,12 @@ class TemperatureController {
 
   void startGeneratingData() {
     _timer = Timer.periodic(Duration(seconds: 2), (timer) {
+      // 5 saniyeden 2 saniyeye değiştirildi
       final newTemperature = TemperatureData(
         DateTime.now(),
         15 + _random.nextDouble() * 10, // 15-25 derece arası rastgele sıcaklık
       );
-      _temperatureData.add(newTemperature);
+      _temperatureData.insert(0, newTemperature); // Yeni veri başa ekleniyor
     });
   }
 

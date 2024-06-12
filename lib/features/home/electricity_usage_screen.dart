@@ -5,7 +5,7 @@ class ElectricityUsageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Electricity Usage'),
+        title: Text('Elektrik Kullanımı'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -13,23 +13,23 @@ class ElectricityUsageScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Detailed Electricity Usage',
+              'Detaylı Elektrik Kullanımı',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
             // Örnek olarak statik veri ekliyoruz. Buraya dinamik veriler de ekleyebilirsiniz.
             Text(
-              'This Month: 63.2 kWh',
+              'Bu Ay: 63.2 kWh',
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 10),
             Text(
-              'Last Month: 58.4 kWh',
+              'Son Ay: 58.4 kWh',
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 10),
             Text(
-              'Average Usage: 60.5 kWh',
+              'Ortalama Kullanım: 60.5 kWh',
               style: TextStyle(fontSize: 18),
             ),
             // Daha fazla detay ekleyebilirsiniz.

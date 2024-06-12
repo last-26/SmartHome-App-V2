@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,8 +19,6 @@ import 'package:smart_home/features/home/controller/temperature_controller.dart'
 import 'package:smart_home/features/home/model/temperature_model.dart';
 import 'package:smart_home/features/home/temperature_screen.dart';
 import 'package:smart_home/database_helper.dart'; // Yeni dosyayı import edin
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
 
 class HomeScreenView extends StatefulWidget {
   const HomeScreenView({super.key});
@@ -85,9 +86,12 @@ class _HomeScreenViewState extends State<HomeScreenView> {
             children: [
               const SizedBox(height: 60),
               BounceFromBottomAnimation(delay: 6, child: topbar()),
-              BounceFromBottomAnimation(delay: 6, child: AddDeviceWidget()),  // Use AddDeviceWidget here
+              BounceFromBottomAnimation(
+                  delay: 6,
+                  child: AddDeviceWidget()), // Use AddDeviceWidget here
               const SizedBox(height: 20),
-              BounceFromBottomAnimation(delay: 4, child: electricitycard(context)),
+              BounceFromBottomAnimation(
+                  delay: 4, child: electricitycard(context)),
               const SizedBox(height: 10),
               BounceFromBottomAnimation(
                 delay: 2,
@@ -164,7 +168,8 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TemperatureScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => TemperatureScreen()),
                   );
                 },
                 child: Text('Sıcaklık Verilerini Görüntüle'),
@@ -173,30 +178,24 @@ class _HomeScreenViewState extends State<HomeScreenView> {
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   children: [
-                    Text('Sıcaklık: $temperature °C', style: GoogleFonts.roboto(fontSize: 16, color: Colors.white)),
-                    Text('Ses: $sound dB', style: GoogleFonts.roboto(fontSize: 16, color: Colors.white)),
-                    Text('Parlaklık: $brightness %', style: GoogleFonts.roboto(fontSize: 16, color: Colors.white)),
-                    Text('Kullanıcı Sayısı: $userCount', style: GoogleFonts.roboto(fontSize: 16, color: Colors.white)),
+                    Text('Sıcaklık: $temperature °C',
+                        style: GoogleFonts.roboto(
+                            fontSize: 16, color: Colors.white)),
+                    Text('Ses: $sound dB',
+                        style: GoogleFonts.roboto(
+                            fontSize: 16, color: Colors.white)),
+                    Text('Parlaklık: $brightness %',
+                        style: GoogleFonts.roboto(
+                            fontSize: 16, color: Colors.white)),
+                    Text('Kullanıcı Sayısı: $userCount',
+                        style: GoogleFonts.roboto(
+                            fontSize: 16, color: Colors.white)),
                   ],
                 ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Ana Ekran'),
-      ),
-      body: Center(
-        child: AddDeviceWidget(),  // addDevice widget'ını burada kullanın
       ),
     );
   }

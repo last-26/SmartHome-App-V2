@@ -27,45 +27,21 @@ class _GraphScreenState extends State<GraphScreen> {
                 const SizedBox(
                   height: 70,
                 ),
-                SizedBox( 
-                  height: 420,
-                  width: 420,
-                  child: GridView.builder(
-                    padding: EdgeInsets.zero,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: Controller().model_list.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
-                    itemBuilder: (context, index) {
-                      var data = Controller().model_list[index];
-                      return ScaleFadeAnimation(
-                        delay: 2.5,
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: GestureDetector(
-                              onTap: () {
-                                // context.go(Routes.detailsscreen.path);
-                                GoRouter.of(context).push(
-                                    Routes.detailsscreen.path,
-                                    extra: data.model);
-                              },
-                              child: CustomCardView(model: data)),
-                        ),
-                      );
-                    },
-                  ),
-                ),
                 SizedBox(
-                  height: 420,
-                  width: 420,
+                  height: MediaQuery.of(context).size.height -
+                      140, // Ekran yüksekliğine göre ayarla
+                  width: MediaQuery.of(context).size.width -
+                      24, // Ekran genişliğine göre ayarla
                   child: GridView.builder(
                     padding: EdgeInsets.zero,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: Controller().model_list.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2),
+                            crossAxisCount: 2, // İki sütunlu grid
+                            mainAxisSpacing: 10, // Dikey boşluk
+                            crossAxisSpacing: 10, // Yatay boşluk
+                            childAspectRatio: 1.2), // Hücrelerin en-boy oranı
                     itemBuilder: (context, index) {
                       var data = Controller().model_list[index];
                       return ScaleFadeAnimation(
@@ -74,7 +50,6 @@ class _GraphScreenState extends State<GraphScreen> {
                           padding: const EdgeInsets.all(5.0),
                           child: GestureDetector(
                               onTap: () {
-                                // context.go(Routes.detailsscreen.path);
                                 GoRouter.of(context).push(
                                     Routes.detailsscreen.path,
                                     extra: data.model);

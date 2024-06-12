@@ -60,7 +60,7 @@ class _NavigationState extends State<Navigation> {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: icondata.length,
-            padding: const EdgeInsets.symmetric(horizontal: 660, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
             itemBuilder: (context, index) {
               return Padding(
                 padding:

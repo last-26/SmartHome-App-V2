@@ -58,14 +58,14 @@ class _AddDeviceWidgetState extends State<AddDeviceWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Merhaba Samet Soysal 👋",
+                "",
                 style: GoogleFonts.rubik(
                     fontSize: 25,
                     color: Colors.grey.shade400,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "Evine Hoş Geldin.",
+                "Evinize Hoş Geldiniz.",
                 style: GoogleFonts.rubik(
                   fontSize: 18,
                   color: Colors.grey.shade400,
